@@ -1,0 +1,15 @@
+Black Jack Needs
+
+1. Cards Prefabs
+	-Need Background & Face Cards
+2. Game Manager
+3. Canvas for Game Play area
+4. Dealer AI
+5. Betting Button
+	- Doubles if win, lose amount better if lose
+6. Animator and delay of win or lose
+7. Animator to see the card being delt
+8. Show Deck in Play area
+	-show dealer, dealing cards
+9. 
+10.
