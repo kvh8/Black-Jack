@@ -3,7 +3,23 @@ guid: 6b0eda3e767b030428321204bb5d5a06
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - backCardPrefab: {fileID: 2663844010960021628, guid: 6a9209444e8d09d4a9874622a918701c,
+      type: 3}
+  - hitDeal: {instanceID: 0}
+  - stand: {instanceID: 0}
+  - resetBalance: {instanceID: 0}
+  - betFiveHundred: {instanceID: 0}
+  - betOneHundred: {instanceID: 0}
+  - betFifty: {instanceID: 0}
+  - textMoney: {instanceID: 0}
+  - textBet: {instanceID: 0}
+  - textPlayerPoints: {instanceID: 0}
+  - textDealerPoints: {instanceID: 0}
+  - textPlaceYourBet: {instanceID: 0}
+  - textSelectingBet: {instanceID: 0}
+  - textWinner: {instanceID: 0}
+  - resetImgBtn: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

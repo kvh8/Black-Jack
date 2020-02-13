@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Cards : MonoBehaviour
+public class Cards
 {
     private GameObject prefab;
     private int point;
@@ -29,7 +29,7 @@ public class Cards : MonoBehaviour
                 break;
             default:
                 // other remaining possible cards, 2 - 9
-                point = Convert.ToInt16(name.Substring(name.Length - 1);   //This converts the last character in the string to the corresponding value of the card
+                point = Convert.ToInt16(name.Substring(name.Length - 1));   //This converts the last character in the string to the corresponding value of the card
                 break;
         }
         this.point = point;

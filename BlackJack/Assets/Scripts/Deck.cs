@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System; 
 
-public class Deck : MonoBehaviour
+public class Deck 
 {
     private List<Cards> deck;
 

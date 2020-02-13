@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3496235347140607420}
   - component: {fileID: 2744651402314446942}
   m_Layer: 5
-  m_Name: Diamonds2
+  m_Name: SpadesKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: df1781e19d9ebac4884bde8c2fc32fe1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
