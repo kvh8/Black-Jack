@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,20 @@ public class GameManager : MonoBehaviour
     private Image resetImgBtn;
 
 
-    
+
+    //public void OnClick()             For Buttons
+    //{
+    //    for (var i = 0; i < 2; i++)
+    //    {
+    //        GameObject playerCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+    //        playerCard.transform.SetParent(PlayerArea.transform, false);
+    //        GameObject opponentCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+    //        opponentCard.transform.SetParent(OpponentArea.transform, false);
+    //    }
+    //}
+
+
+
 
 
 
@@ -30,7 +44,33 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //playerMoney = 1000;
+        //currentBet = 50;
+        //resetGame();
+
+        //primaryBtn.onClick.AddListener(delegate {
+        //    if (isPlaying)
+        //    {
+        //        playerDrawCard();
+        //    }
+        //    else
+        //    {
+        //        startGame();
+        //    }
+        //});
+
+        //secondaryBtn.onClick.AddListener(delegate {
+        //    playerEndTurn();
+        //});
+
+        //betSlider.onValueChanged.AddListener(delegate {
+        //    updateCurrentBet();
+        //});
+
+        //resetBalanceBtn.onClick.AddListener(delegate {
+        //    playerMoney = 1000;
+        //    betSlider.maxValue = playerMoney;
+        //});
     }
 
     // Update is called once per frame
