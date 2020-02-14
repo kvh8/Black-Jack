@@ -1,0 +1,33 @@
+02/11/2020
+
+Today, I had to use the unity game manual in order to get an idea of where to start. 
+I was trying to use what I learned from the two tutorials over the weekend, but doing tutorials 
+and trying to do it by yourself are completely different. I am a bit concerned about my timing for this milestone, 
+but I think I can get it done. I might need to use some blackjack tutorials though.The only thing I am concerned about 
+is where to start with the scripting and if I should use sprites or the UI canvas. I think the canvas might be my best 
+option, but I am not sure about the sizing because the images I imported have to be very big in order to see the design, 
+and I do not know how to edit the game cameras range, yet. 
+I have been doing a lot of research on paper, so my github check ins are not going to be very spread out, since I am not 
+doing a lot of editing on unity yet. I do have the base set up already though, so that is a plus. I hope I can get this 
+done in time. I find it very hard to balance my job, rowing and all my classes while trying to sleep and eat like a normal person. 
+I went with UI canvas since our 2d card game tutorial has a lot of aspects that I can expand on. I used the script of the draw 
+cards from that tutorial as the base for my own, I will need to add the counting and such for black jack rules, but I think 
+that needs to go in the game manager. 
+
+02/12/2020
+
+So I found a really good black jack online. I am using this as a basis for my black jack, but I am again having trouble 
+with the scripting because I am not sure where to start. I know I need to make a list of cards and have those cards represent 
+numbers, and then draw them randomly from the deck for both the dealer and player. I have the visual aspect of my game all set up, 
+all I need is the scripting. It is a very difficult process to figure out what works best for me, especially when it is so tempting 
+to just copy and paste others, but I would never understand what I am doing, plus I would feel a bit dishonest taking credit for 
+someone else's work. 
+By the end of today's work, I only need to do the hardest part of the challenge now. RIP. You know what I realized, 
+I still have all day tomorrow to figure this out and probably some of Friday as well. That reassures me greatly.
+
+02/14/2020
+
+I finished the game! And it has everything needed, I would like to add some kind of animation, but I am saving that for this 
+weekend. When I first started this milestone I was very overwhelmed and I was not sure if I would actually complete it, but I 
+found some tutorials and that helped me. Over the course of this last week, I really enjoyed creating this project. To go from 
+completely overwhelmed to a bit overconfident in my code is awesome. I can not wait for the next milestone!
