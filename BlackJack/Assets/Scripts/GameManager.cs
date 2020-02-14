@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject backCardPrefab;
     [SerializeField]
-    private Button hitDeal, stand, resetBalance, betFiveHundred, betOneHundred, betFifty;
+    private Button hitDeal, stand, resetBet, resetBalance, betFiveHundred, betOneHundred, betFifty;
     [SerializeField]
     private Text textMoney, textBet, textPlayerPoints, textDealerPoints, textPlaceYourBet, textSelectingBet, textWinner;
     [SerializeField]
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()            
     {
         playerMoney = 1000;
-        currentBet = 50;
+        currentBet = 0;
         resetGame();
 
         hitDeal.onClick.AddListener(delegate
@@ -56,6 +56,13 @@ public class GameManager : MonoBehaviour
         {
             playerMoney = 1000;
         });
+
+        resetBet.onClick.AddListener(delegate
+        {
+            currentBet = 0;
+            textSelectingBet.text = "$" + currentBet.ToString();
+
+        });
     }
 
     void Update()
@@ -64,32 +71,33 @@ public class GameManager : MonoBehaviour
     }
     public void startGame()     
     {
-        if (playerMoney > 50)
+        if (playerMoney > 0)
         {
             playerMoney -= currentBet;
             if (playerMoney < 0)
             {
                 playerMoney += currentBet;
 
-                if(playerMoney < 500)
-                {
-                    betFiveHundred.gameObject.SetActive(false);
-                }
-                else if(playerMoney < 100)
-                {
-                    betOneHundred.gameObject.SetActive(false);
-                }
-                else if(playerMoney < 50)
-                {
-                    endGame();
-                }
+                //if(playerMoney < 500)
+                //{
+                //    betFiveHundred.gameObject.SetActive(false);
+                //}
+                //else if(playerMoney < 100)
+                //{
+                //    betOneHundred.gameObject.SetActive(false);
+                //}
+                //else if(playerMoney < 50)
+                //{
+                    
+                //    endGame();
+                //}
 
                 return;
             }
 
             isPlaying = true;
 
-            // Update UI accordingly
+            // Update UI 
 
            
             textSelectingBet.gameObject.SetActive(false);
@@ -98,6 +106,7 @@ public class GameManager : MonoBehaviour
             stand.gameObject.SetActive(true);
             textBet.text = "Bet: $" + currentBet.ToString();
             resetBalance.gameObject.SetActive(false);
+            resetBet.gameObject.SetActive(false);
 
             // assign the playing deck with 2 deck of cards
             playingDeck = new Deck(cardPrefabs, 2);
@@ -249,19 +258,19 @@ public class GameManager : MonoBehaviour
         betFiveHundred.onClick.AddListener(delegate
         {
             currentBet += 500;
-            textSelectingBet.text = "$" + currentBet.ToString();
+            //textSelectingBet.text = "$" + currentBet.ToString();
         });
 
         betOneHundred.onClick.AddListener(delegate
         {
             currentBet += 100;
-            textSelectingBet.text = "$" + currentBet.ToString();
+            //textSelectingBet.text = "$" + currentBet.ToString();
         });
 
         betFifty.onClick.AddListener(delegate
         {
             currentBet += 50;
-            textSelectingBet.text = "$" + currentBet.ToString();
+            //textSelectingBet.text = "$" + currentBet.ToString();
         });
     }
 
