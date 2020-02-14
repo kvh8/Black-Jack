@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject backCardPrefab;
     [SerializeField]
-    private Button hitDeal, stand, resetBet, resetBalance, betFiveHundred, betOneHundred, betFifty;
+    private Button hitDeal, stand, resetBet, resetBalance, betFiveHundred, betOneHundred, betFifty, deckAdd, deckSub, deckComplete;
     [SerializeField]
-    private Text textMoney, textBet, textPlayerPoints, textDealerPoints, textPlaceYourBet, textSelectingBet, textWinner;
+    private Text textMoney, textBet, textPlayerPoints, textDealerPoints, textPlaceYourBet, textSelectingBet, textWinner, textNumDecks;
     [SerializeField]
     private Image resetImgBtn;
 
@@ -24,11 +24,13 @@ public class GameManager : MonoBehaviour
     private int playerMoney;
     private int currentBet;
     private int playerCardPointer, dealerCardPointer;
+    private int numDecks;
     private Deck playingDeck;
 
     // Start is called before the first frame update
     void Start()            
     {
+        beforePlay();
         playerMoney = 1000;
         currentBet = 0;
         resetGame();
@@ -109,7 +111,7 @@ public class GameManager : MonoBehaviour
             resetBet.gameObject.SetActive(false);
 
             // assign the playing deck with 2 deck of cards
-            playingDeck = new Deck(cardPrefabs, 2);
+            playingDeck = new Deck(cardPrefabs, numDecks);
 
             // draw 1 card for player then 1 for dealer
             playerDrawCard();
@@ -258,19 +260,19 @@ public class GameManager : MonoBehaviour
         betFiveHundred.onClick.AddListener(delegate
         {
             currentBet += 500;
-            //textSelectingBet.text = "$" + currentBet.ToString();
+            textSelectingBet.text = "$" + currentBet.ToString();
         });
 
         betOneHundred.onClick.AddListener(delegate
         {
             currentBet += 100;
-            //textSelectingBet.text = "$" + currentBet.ToString();
+            textSelectingBet.text = "$" + currentBet.ToString();
         });
 
         betFifty.onClick.AddListener(delegate
         {
             currentBet += 50;
-            //textSelectingBet.text = "$" + currentBet.ToString();
+            textSelectingBet.text = "$" + currentBet.ToString();
         });
     }
 
@@ -318,15 +320,49 @@ public class GameManager : MonoBehaviour
         endGame();
     }
 
+    private void beforePlay()       //added code
+    {
+        deckAdd.onClick.AddListener(delegate
+        {
+            numDecks += 1;
+            textNumDecks.text = "Number of Decks:\n" + numDecks;
+        });
+        deckSub.onClick.AddListener(delegate
+        {
+            numDecks -= 1;
+            if(numDecks < 1)
+            {
+                numDecks = 1;
+                textNumDecks.text = "Number of Decks:\n" + numDecks;
+            }
+            else
+            {
+                textNumDecks.text = "Number of Decks:\n" + numDecks;
+            }
+            
+        });
+        deckComplete.GetComponent<Button>().onClick.AddListener(delegate
+        {
+            deckSub.gameObject.SetActive(false);
+            deckAdd.gameObject.SetActive(false);
+            textNumDecks.gameObject.SetActive(false);
+            deckComplete.gameObject.SetActive(false);
+            resetGame();
+        });
+       
+    }
+
     private void resetGame()        
     {
         isPlaying = false;
+      
 
         // reset points
         playerPoints = 0;
         actualDealerPoints = 0;
         playerCardPointer = 0;
         dealerCardPointer = 0;
+        currentBet = 0;
 
         // reset cards
         playingDeck = new Deck(cardPrefabs, 2);
@@ -349,6 +385,7 @@ public class GameManager : MonoBehaviour
         textWinner.text = "";
         resetImgBtn.gameObject.SetActive(false);
         resetBalance.gameObject.SetActive(true);
+        resetBet.gameObject.SetActive(true);
 
         // clear cards on table
         clearCards();
